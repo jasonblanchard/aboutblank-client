@@ -1,6 +1,6 @@
 # Aboutblank
 
-I killed my old PHP-ey website. Need to make a new one. Using fance new stuff.
+I killed my old PHP-ey website. Need to make a new one. Using fancy new stuff.
 
 ## Prerequisites
 
