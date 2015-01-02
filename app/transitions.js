@@ -7,6 +7,11 @@ export default function() {
   );
 
   this.transition(
+    this.toRoute('about'),
+    this.use('fade')
+  );
+
+  this.transition(
     this.fromRoute('feed'),
     this.toRoute('projects'),
     this.use('toLeft'),
