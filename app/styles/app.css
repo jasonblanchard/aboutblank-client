@@ -3,13 +3,24 @@ html, body {
   font-family: 'Pontano Sans', sans-serif;
 }
 
+strong {
+  font-family: 'raleway';
+  font-size: .9em;
+}
+
 h1, h2, h3 {
   font-family: 'raleway';
   font-weight: 800
 }
 
-a {
+a, a:visited {
   text-decoration: none;
+  color: rgb(53, 86, 118);
+  font-size: 1.2em;
+}
+
+a.active {
+  font-weight: bold;
 }
 
 a:hover {
@@ -20,8 +31,22 @@ nav {
   font-family: 'raleway';
 }
 
-.active {
+nav.main {
+  text-align: center;
+}
+
+nav.main a.active {
   font-weight: bold;
+  border-bottom: 3px solid rgb(53, 86, 118);
+}
+
+nav.main a:hover {
+  text-decoration: none;
+  color: rgb(132, 141, 150);
+}
+
+.main-content {
+  margin-top: 30px;
 }
 
 .project footer {
