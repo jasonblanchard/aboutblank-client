@@ -3,6 +3,29 @@ html, body {
   font-family: 'Pontano Sans', sans-serif;
 }
 
+h1, h2, h3 {
+  font-family: 'raleway';
+  font-weight: 800
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  font-family: 'raleway';
+}
+
 .active {
   font-weight: bold;
 }
+
+.project footer {
+  font-family: 'raleway';
+  font-size: .8em;
+}
+

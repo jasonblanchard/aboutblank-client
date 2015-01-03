@@ -1,10 +1,12 @@
-<article class='project'>
-  <h2>ApprenNet</h2>
-  <div class='project-image'>
-    image here
-  </div>
-  <p>Description blah blah blah ....</p>
-  <footer>
-    link to website | link to code
-  </footer>
-</article>
+{{#each}}
+  <article class='project'>
+    <h2>{{name}}</h2>
+    <p>{{description}}</p>
+    <footer>
+      <a {{bind-attr href='url'}} target='_blank'>Web</a> 
+      {{#if code}}
+        | <a {{bind-attr href='code'}} target='_blank'>Code</a>
+      {{/if}}
+    </footer>
+  </article>
+{{/each}}
