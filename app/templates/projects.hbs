@@ -3,10 +3,12 @@
     <h2>{{name}}</h2>
     <p>{{description}}</p>
     <footer>
-      <span class='icon-link'></span> <a {{bind-attr href='url'}} target='_blank'>Web</a> 
-      {{#if code}}
-      | <span class='icon-embed2'></span> <a {{bind-attr href='code'}} target='_blank'>Code</a>
-      {{/if}}
+      <div class='sub-info'>
+        <span class='icon-link'></span> <a {{bind-attr href='url'}} target='_blank'>web</a> 
+        {{#if code}}
+        | <span class='icon-embed2'></span> <a {{bind-attr href='code'}} target='_blank'>code</a>
+        {{/if}}
+      </div>
     </footer>
   </article>
 {{/each}}

@@ -80,11 +80,15 @@ nav.main a:hover {
   margin-top: 30px;
 }
 
-.project footer {
+.sub-info {
   font-family: 'raleway';
-  font-size: .8em;
+  font-size: .7em;
 }
 
 .pull-right {
   float: right;
+}
+
+.timeline {
+  border: 2px solid rgb(216, 211, 211);
 }
