@@ -1,5 +1,5 @@
 html, body {
-  margin: 20px;
+  margin: 10px;
   font-family: 'Pontano Sans', sans-serif;
   color: rgb(62, 62, 62);
   font-size: 16px;
@@ -29,19 +29,15 @@ a:hover {
   text-decoration: underline;
 }
 
-header.main-header {
-  margin-bottom: 20px;
-}
-
 header.main-header h1 {
-  display: inline;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 header.main-header p {
-  display: inline;
+  margin-top: 0px;
   font-family: 'raleway';
   color: rgb(140, 140, 140);
-  margin-left: 10px;
   word-spacing: 2px;
 }
 
@@ -57,6 +53,10 @@ header.main-header a:hover {
 header .icons {
   margin-top: 0px;
   font-size: 2em;
+}
+
+header p {
+  margin-bottom: 0px;
 }
 
 nav {
@@ -93,4 +93,8 @@ nav.main a:hover {
 
 .timeline {
   border: 2px solid rgb(216, 211, 211);
+}
+
+.text-align-right {
+  text-align: right;
 }
