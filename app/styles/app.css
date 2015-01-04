@@ -44,6 +44,20 @@ header.main-header p {
   word-spacing: 2px;
 }
 
+header.main-header a {
+  color: rgb(140, 140, 140);
+}
+
+header.main-header a:hover {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+}
+
+header .icons {
+  margin-top: 0px;
+  font-size: 2em;
+}
+
 nav {
   font-family: 'raleway';
 }
@@ -71,3 +85,6 @@ nav.main a:hover {
   font-size: .8em;
 }
 
+.pull-right {
+  float: right;
+}

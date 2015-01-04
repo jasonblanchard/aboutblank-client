@@ -3,9 +3,9 @@
     <h2>{{name}}</h2>
     <p>{{description}}</p>
     <footer>
-      <a {{bind-attr href='url'}} target='_blank'>Web</a> 
+      <span class='icon-link'></span> <a {{bind-attr href='url'}} target='_blank'>Web</a> 
       {{#if code}}
-        | <a {{bind-attr href='code'}} target='_blank'>Code</a>
+      | <span class='icon-embed2'></span> <a {{bind-attr href='code'}} target='_blank'>Code</a>
       {{/if}}
     </footer>
   </article>
