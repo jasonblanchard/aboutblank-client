@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
       production: {
         options: {
-          bucket: 'aboutblanktech',
+          bucket: 'about.blanktech.net',
         },
         files: [
           {expand: true, cwd: 'dist/', src: ['**'], dest: ''}
