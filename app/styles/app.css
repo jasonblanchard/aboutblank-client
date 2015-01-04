@@ -2,6 +2,7 @@ html, body {
   margin: 20px;
   font-family: 'Pontano Sans', sans-serif;
   color: rgb(62, 62, 62);
+  font-size: 16px;
 }
 
 strong {
@@ -16,7 +17,7 @@ h1, h2, h3 {
 
 a, a:visited {
   text-decoration: none;
-  color: rgb(53, 86, 118);
+  color: rgb(42, 108, 171);
   font-size: 1.2em;
 }
 
@@ -69,6 +70,7 @@ nav.main {
 nav.main a.active {
   font-weight: bold;
   border-bottom: 3px solid rgb(53, 86, 118);
+  text-decoration: none;
 }
 
 nav.main a:hover {
