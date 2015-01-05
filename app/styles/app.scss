@@ -1,9 +1,14 @@
 @import 'bootstrap';
 
+$font-color: rgb(62, 62, 62);
+$font-color-sub: lighten($font-color, 35%);
+$link-color: #2a6cab;
+$link-hover-color: #9DA3A8;
+
 html, body {
   margin: 10px;
   font-family: 'Pontano Sans', sans-serif;
-  color: rgb(62, 62, 62);
+  color: $font-color;
   font-size: 16px;
 }
 
@@ -20,6 +25,7 @@ h1, h2, h3 {
 a, a:visited {
   text-decoration: none;
   color: rgb(42, 108, 171);
+  color: $link-color;
   font-size: 1.2em;
 }
 
@@ -29,6 +35,7 @@ a.active {
 
 a:hover {
   text-decoration: underline;
+  color: $link-hover-color;
 }
 
 header.main-header h1 {
@@ -39,12 +46,12 @@ header.main-header h1 {
 header.main-header p {
   margin-top: 0px;
   font-family: 'raleway';
-  color: rgb(140, 140, 140);
+  color: $font-color-sub;
   word-spacing: 2px;
 }
 
 header.main-header a {
-  color: rgb(140, 140, 140);
+  color: $font-color-sub;
 }
 
 header.main-header a:hover {
@@ -59,7 +66,7 @@ header {
     font-size: 2em;
 
       & a:hover {
-        color: #2a6cab;
+        color: $link-color;
       }
   }
 
@@ -75,21 +82,23 @@ nav {
 
 nav.main {
   text-align: center;
+  word-spacing: 6px;
 
   a.active {
     font-weight: bold;
-    border-bottom: 3px solid #2a6cab;
+    border-bottom: 3px solid $link-color;
     text-decoration: none;
   }
 
   a:hover {
     text-decoration: none;
-    color: #9DA3A8;
+    color: $link-hover-color;
   }
 
-  a.active:hover {
-    border-bottom: 3px solid #9DA3A8;
+  a:hover {
+    border-bottom: 3px solid $link-hover-color;
   }
+
 }
 
 .main-content {
@@ -117,6 +126,7 @@ nav.main {
   width: 80%;
   display: block;
   margin: 0 auto;
+  border-radius: 2px;
 }
 
 @import 'mobile';
