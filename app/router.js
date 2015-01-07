@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('about');
   this.route('projects');
   this.route('feed');
+  this.resource('goodreads-events', { path: 'goodreads-events' }, function() { });
 });
 
 export default Router;
