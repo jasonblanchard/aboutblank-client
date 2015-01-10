@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('projects');
   this.route('feed');
   this.resource('goodreads-events', { path: 'goodreads-events' }, function() { });
+  this.resource('delicious-events', { path: 'delicious-events' }, function() { });
 });
 
 export default Router;

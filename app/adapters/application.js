@@ -5,11 +5,14 @@ export default DS.ActiveModelAdapter.extend({
   namespace: 'api/v2'
 });
 
-DS.ActiveModelAdapter.reopen({
-  if (ENV.environment === 'development') {
-    host: 'localhost:3000'
-  } else {
-    host: 'https://aboutblank-server.herokuapp.com'
-  }
-});
 
+if (ENV.environment === 'development') {
+  DS.ActiveModelAdapter.reopen({
+    host: 'http://localhost:3000'
+  });
+
+} else {
+  DS.ActiveModelAdapter.reopen({
+    host: 'https://aboutblank-server.herokuapp.com'
+  });
+}
