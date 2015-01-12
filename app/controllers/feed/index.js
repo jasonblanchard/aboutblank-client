@@ -17,8 +17,6 @@ export default Ember.Controller.extend({
 
   activeEvents: Ember.computed.filterBy('availableEvents', 'active', true),
 
-  //activeEvents: ['deliciousEvents', 'goodreadsEvents'],
-
   allEvents: function() {
     return this.get('model').get('firstObject');
   }.property('model'),
