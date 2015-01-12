@@ -26,7 +26,6 @@ a, a:visited {
   text-decoration: none;
   color: rgb(42, 108, 171);
   color: $link-color;
-  font-size: 1.2em;
 }
 
 a.active {
@@ -84,6 +83,10 @@ nav.main {
   text-align: center;
   word-spacing: 6px;
 
+  a {
+    font-size: 1.2em;
+  }
+
   a.active {
     font-weight: bold;
     border-bottom: 3px solid $link-color;
@@ -107,7 +110,8 @@ nav.main {
 
 .sub-info {
   font-family: 'raleway';
-  font-size: .7em;
+  font-size: .9em;
+  color: $font-color-sub;
 }
 
 .pull-right {
@@ -130,3 +134,4 @@ nav.main {
 }
 
 @import 'mobile';
+@import 'events';

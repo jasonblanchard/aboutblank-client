@@ -6,4 +6,6 @@ export default DS.Model.extend({
   happenedAt: DS.attr('date'),
   imageUrl: DS.attr('string'),
   url: DS.attr('string'),
+  icon: 'icon-delicious',
+  prefix: 'Bookmarked'
 });
