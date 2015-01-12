@@ -1,3 +1,8 @@
+{{#each availableEvents}}
+  <span>
+    {{input type='checkbox' checked=active}} <span {{bind-attr class=icon}}></span>
+  </span>
+{{/each}}
 
 {{#each feedItems}}
   <div class='row event'>
@@ -13,6 +18,12 @@
           </span>
         </div>
       </div>
+    </div>
+  </div>
+{{else}}
+  <div class='row event'>
+    <div class='col-md-12'>
+      Select which type you want to see
     </div>
   </div>
 {{/each}}
