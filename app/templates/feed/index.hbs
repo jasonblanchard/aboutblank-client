@@ -1,1 +1,19 @@
 {{outlet}}
+{{#each feedItems}}
+  <div class='row event'>
+    <div class='col-md-12'>
+      <div class='event-icon pull-left'>
+        <span {{bind-attr class='this.icon'}}></span>
+      </div>
+      <div class='event-content'>
+        <div>
+          <span class='sub-info'>{{this.prefix}}</span> <a {{bind-attr href='this.url'}} target='_blank'><strong>{{this.title}}</strong></a>
+          <span class='sub-info'>
+            {{time-ago-in-words this.happenedAt}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+
