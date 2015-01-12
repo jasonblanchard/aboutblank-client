@@ -2,24 +2,27 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  activeEvents: ['deliciousEvents', 'goodreadsEvents'],
+
+  allEvents: function() {
+    return this.get('model').get('firstObject');
+  }.property('model'),
+
   feedItems: function() {
 
-    var events = this.get('model').get('firstObject');
+    var events = this.get('allEvents');
     var deliciousEvents = events.get('deliciousEvents');
     var goodreadsEvents = events.get('goodreadsEvents');
-    
     var feed = Ember.A();
 
-    deliciousEvents.forEach(function(item) {
-      feed.pushObject(item);
+    this.get('activeEvents').forEach(function(item) {
+      events.get(item).forEach(function(eventItem) {
+        feed.pushObject(eventItem);
+      });
     });
-
-    goodreadsEvents.forEach(function(item) {
-      feed.pushObject(item);
-    });
-
+    
     return feed.sortBy('happenedAt').reverse();
 
-  }.property('model.goodreadsEvents.@each', 'model.deliciousEvents.@each')
+  }.property('allEvents.@each', 'activeEvents')
 
 });
