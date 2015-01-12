@@ -35,6 +35,7 @@
     "liquid-fire": "^0.15.2"
   },
   "dependencies": {
-    "broccoli-sass": "^0.3.3"
+    "broccoli-sass": "^0.3.3",
+    "ember-cli-dates": "^0.2.1"
   }
 }

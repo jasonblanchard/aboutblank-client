@@ -13,11 +13,6 @@ export default Ember.Controller.extend({
   feedItems: function() {
     
     var feed = Ember.A();
-
-    this.get('goodreadsEvents').forEach(function(item) {
-      feed.pushObject(item);
-    });
-
     this.get('deliciousEvents').forEach(function(item) {
       feed.pushObject(item);
     });

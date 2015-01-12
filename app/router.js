@@ -8,7 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('about');
   this.route('projects');
-  this.route('feed');
+  this.resource('feed', function() {});
   this.resource('goodreads-events', { path: 'goodreads-events' }, function() { });
   this.resource('delicious-events', { path: 'delicious-events' }, function() { });
 });
