@@ -1,20 +1,17 @@
 {{#each feedItems}}
   <div class='row event'>
-    <div class='event-icon col-md-1 text-align-right'>
-      <div class='mobile-hide'>
+    <div class='col-md-12'>
+      <div class='event-icon pull-left'>
         <span {{bind-attr class='this.icon'}}></span>
       </div>
-    </div>
-    <div class='col-md-7'>
-      <div>
-        {{this.prefix}} <a {{bind-attr href='this.url'}} target='_blank'><strong>{{this.title}}</strong></a>
-        {{#if this.imageUrl}}
-          <img class='pull-right event-image mobile-hide' {{bind-attr src='this.imageUrl'}}></img>
-        {{/if}}
+      <div class='event-content'>
+        <div>
+          <span class='sub-info'>{{this.prefix}}</span> <a {{bind-attr href='this.url'}} target='_blank'><strong>{{this.title}}</strong></a>
+        </div>
+        <div class='sub-info'>
+          {{this.happenedAt}}
+        </div>
       </div>
-    </div>
-    <div class='col-md-4 sub-info'>
-      {{this.happenedAt}}
     </div>
   </div>
 {{/each}}
