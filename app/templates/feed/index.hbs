@@ -1,8 +1,10 @@
-{{#each availableEvents}}
-  <span>
-    {{input type='checkbox' checked=active}} <span {{bind-attr class=icon}}></span>
-  </span>
-{{/each}}
+<div class='event-type-picker'>
+  {{#each availableEvents}}
+    <div class='type'> 
+      {{input type='checkbox' checked=active}} <span {{bind-attr class=icon}}></span>
+    </div>
+  {{/each}}
+</div>
 
 {{#each feedItems}}
   <div class='row event'>
