@@ -1,11 +1,9 @@
-import DS from 'ember-data';
+import BaseEvent from 'aboutblank/models/base-event';
+import eventMetadata from 'aboutblank/models/event-metadata';
 
-export default DS.Model.extend({
-  title: DS.attr('string'),
-  uuid: DS.attr('string'),
-  happenedAt: DS.attr('date'),
-  imageUrl: DS.attr('string'),
-  url: DS.attr('string'),
-  icon: 'icon-delicious',
-  prefix: 'Bookmarked'
+var metadata = eventMetadata()['goodreadsEvent'];
+
+export default BaseEvent.extend({
+  icon: metadata.icon,
+  prefix: metadata.prefix
 });

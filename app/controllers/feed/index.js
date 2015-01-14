@@ -1,13 +1,15 @@
 import Ember from 'ember';
+import eventMetadata from 'aboutblank/models/event-metadata';
 
 export default Ember.Controller.extend({
 
   availableEvents: function() {
-    
+
     // TODO: Refactor this to use the model classes somehow
+    // Put these proxy objects in the eventMetadata service object
     var eventTypes = [
-      Ember.ObjectProxy.create({content: {name: 'deliciousEvents', active: true, icon: 'icon-delicious'}}),
-      Ember.ObjectProxy.create({content: {name: 'goodreadsEvents', active: true, icon: 'icon-book'}})
+      Ember.ObjectProxy.create({content: {name: 'deliciousEvents', active: true, icon: eventMetadata()['deliciousEvent'].icon}}),
+      Ember.ObjectProxy.create({content: {name: 'goodreadsEvents', active: true, icon: eventMetadata()['goodreadsEvent'].icon}})
     ];
 
     return Ember.ArrayProxy.create({
@@ -24,8 +26,6 @@ export default Ember.Controller.extend({
   feedItems: function() {
 
     var events = this.get('allEvents');
-    var deliciousEvents = events.get('deliciousEvents');
-    var goodreadsEvents = events.get('goodreadsEvents');
     var feed = Ember.A();
 
     this.get('activeEvents').forEach(function(item) {
