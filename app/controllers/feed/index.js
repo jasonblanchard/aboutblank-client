@@ -3,13 +3,13 @@ import eventMetadata from 'aboutblank/models/event-metadata';
 
 export default Ember.Controller.extend({
 
-  availableEvents: function() {
+  availableEventTypes: function() {
 
     // TODO: Refactor this to use the model classes somehow
     // Put these proxy objects in the eventMetadata service object
     var eventTypes = [
-      Ember.ObjectProxy.create({content: {name: 'deliciousEvents', active: true, icon: eventMetadata()['deliciousEvent'].icon}}),
-      Ember.ObjectProxy.create({content: {name: 'goodreadsEvents', active: true, icon: eventMetadata()['goodreadsEvent'].icon}})
+      Ember.ObjectProxy.create({content: {name: 'deliciousEvents', label: "Delicious Bookmarks", icon: eventMetadata()['deliciousEvent'].icon}}),
+      Ember.ObjectProxy.create({content: {name: 'goodreadsEvents', label: "Goodreads Bookmarks", icon: eventMetadata()['goodreadsEvent'].icon}})
     ];
 
     return Ember.ArrayProxy.create({
@@ -17,25 +17,33 @@ export default Ember.Controller.extend({
     });
   }.property('model'),
 
-  activeEvents: Ember.computed.filterBy('availableEvents', 'active', true),
+  eventSelection: 'all',
 
-  allEvents: function() {
+  activeEventTypes: function() {
+    if (this.get('eventSelection') == 'all') {
+      return this.get('availableEventTypes');
+    } else {
+      return this.get('availableEventTypes').filterBy('name', this.get('eventSelection'));
+    }
+  }.property('eventSelection'),
+
+  feed: function() {
     return this.get('model').get('firstObject');
   }.property('model'),
 
   feedItems: function() {
 
-    var events = this.get('allEvents');
+    var rawfeed = this.get('feed');
     var feed = Ember.A();
 
-    this.get('activeEvents').forEach(function(item) {
-      events.get(item.get('name')).forEach(function(eventItem) {
+    this.get('activeEventTypes').forEach(function(item) {
+      rawfeed.get(item.get('name')).forEach(function(eventItem) {
         feed.pushObject(eventItem);
       });
     });
     
     return feed.sortBy('happenedAt').reverse();
 
-  }.property('allEvents.@each', 'activeEvents.@each')
+  }.property('feed.@each', 'activeEventTypes.@each')
 
 });

@@ -1,7 +1,10 @@
 <div class='event-type-picker'>
-  {{#each availableEvents}}
+  <div class='type'> 
+    {{radio-button name='active-events' value='all' checked=eventSelection}} All
+  </div>
+  {{#each type in availableEventTypes}}
     <div class='type'> 
-      {{input type='checkbox' checked=active}} <span {{bind-attr class=icon}}></span>
+      {{radio-button name='active-events' value=type.name checked=eventSelection}} <span {{bind-attr class=type.icon}}></span> {{type.label}}
     </div>
   {{/each}}
 </div>
