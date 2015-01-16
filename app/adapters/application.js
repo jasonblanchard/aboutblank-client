@@ -6,13 +6,12 @@ export default DS.ActiveModelAdapter.extend({
 });
 
 
-if (ENV.environment === 'development') {
-  DS.ActiveModelAdapter.reopen({
-    host: 'http://localhost:3000'
-  });
-
-} else {
+if (ENV.environment === 'production') {
   DS.ActiveModelAdapter.reopen({
     host: 'https://aboutblank-server.herokuapp.com'
+  });
+} else {
+  DS.ActiveModelAdapter.reopen({
+    host: 'http://localhost:3000'
   });
 }
