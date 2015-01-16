@@ -1,9 +1,9 @@
 import BaseEvent from 'aboutblank/models/base-event';
-import eventMetadata from 'aboutblank/models/event-metadata';
+import registeredEvents from 'aboutblank/models/registered-events';
 
-var metadata = eventMetadata()['deliciousEvent'];
+var metadata = registeredEvents.findBy('name', 'deliciousEvents');
 
 export default BaseEvent.extend({
-  icon: metadata.icon,
-  prefix: metadata.prefix
+  icon: metadata.get('icon'),
+  prefix: metadata.get('prefix')
 });

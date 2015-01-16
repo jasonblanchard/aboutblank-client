@@ -1,26 +1,16 @@
 import Ember from 'ember';
-import eventMetadata from 'aboutblank/models/event-metadata';
+import registeredEvents from 'aboutblank/models/registered-events';
 
 export default Ember.Controller.extend({
 
   availableEventTypes: function() {
-
-    // TODO: Refactor this to use the model classes somehow
-    // Put these proxy objects in the eventMetadata service object
-    var eventTypes = [
-      Ember.ObjectProxy.create({content: {name: 'deliciousEvents', label: "Delicious Bookmarks", icon: eventMetadata()['deliciousEvent'].icon}}),
-      Ember.ObjectProxy.create({content: {name: 'goodreadsEvents', label: "Goodreads Bookmarks", icon: eventMetadata()['goodreadsEvent'].icon}})
-    ];
-
-    return Ember.ArrayProxy.create({
-      content: eventTypes
-    });
+    return registeredEvents;
   }.property('model'),
 
   eventSelection: 'all',
 
   activeEventTypes: function() {
-    if (this.get('eventSelection') == 'all') {
+    if (this.get('eventSelection') === 'all') {
       return this.get('availableEventTypes');
     } else {
       return this.get('availableEventTypes').filterBy('name', this.get('eventSelection'));
