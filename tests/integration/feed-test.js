@@ -18,15 +18,16 @@ module('Integration - feed page', {
   },
   teardown: function() {
     Ember.run(App, 'destroy');
-    server.shutdown();
+    //server.shutdown();
   }
 });
 
-/*
 test('Should show some feed items', function() {
-  debugger;
   visit('/feed').then(function() {
-    equal(find('.event-content').first().find('a').text(), "Ember.js - Ember.MutableArray");
+    equal(find('.event-content').first().find('.prefix').text(), "Bookmarked");
+    equal(find('.event-content').first().find('.title').text(), "Ember.js - Ember.MutableArray");
+
+    equal(find('.event-content').last().find('.prefix').text(), "Started reading");
+    equal(find('.event-content').last().find('.title').text(), "A Dance with Dragons (A Song of Ice and Fire, #5)");
   });
 });
-*/

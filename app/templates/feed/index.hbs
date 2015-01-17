@@ -17,8 +17,8 @@
       </div>
       <div class='event-content'>
         <div>
-          <span class='sub-info'>{{this.prefix}}</span> <a {{bind-attr href='this.url'}} target='_blank'><strong>{{this.title}}</strong></a>
-          <span class='sub-info'>
+          <span class='sub-info prefix'>{{this.prefix}}</span> <a {{bind-attr href='this.url'}} class='title' target='_blank'><strong>{{this.title}}</strong></a>
+          <span class='sub-info happened-at'>
             {{time-ago-in-words this.happenedAt}}
           </span>
         </div>

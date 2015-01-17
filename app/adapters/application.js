@@ -10,8 +10,12 @@ if (ENV.environment === 'production') {
   DS.ActiveModelAdapter.reopen({
     host: 'https://aboutblank-server.herokuapp.com'
   });
-} else {
+} else if (ENV.environment === 'development') {
   DS.ActiveModelAdapter.reopen({
     host: 'http://localhost:3000'
+  });
+} else {
+  DS.ActiveModelAdapter.reopen({
+    host: ''
   });
 }
