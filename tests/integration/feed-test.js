@@ -31,3 +31,13 @@ test('Should show some feed items', function() {
     equal(find('.event-content').last().find('.title').text(), "A Dance with Dragons (A Song of Ice and Fire, #5)");
   });
 });
+
+test('Should filter feed items', function() {
+  visit('/feed').then(function() {
+    click('input#goodreadsEvent');
+    andThen(function() {
+      equal(find('.event-content').first().find('.title').text(), "Programming in Go: Creating Applications for the 21st Century");
+      equal(2, find('.event').length);
+    });
+  });
+});
