@@ -14,5 +14,12 @@ export default Ember.A([
       icon: 'icon-delicious',
       prefix: 'Bookmarked',
       label: 'Delicious Bookmarks'
+    }),
+    Ember.Object.create({
+      name: 'githubProjectEvent',
+      pluralName: 'githubProjectEvents',
+      icon: 'icon-github4',
+      prefix: 'Created a new project',
+      label: 'Github Projects'
     })
   ]);
