@@ -18,7 +18,7 @@ export default Ember.A([
     Ember.Object.create({
       name: 'githubProjectEvent',
       pluralName: 'githubProjectEvents',
-      icon: 'icon-github4',
+      icon: 'icon-github3',
       prefix: 'Created a new project',
       label: 'Github Projects'
     })
