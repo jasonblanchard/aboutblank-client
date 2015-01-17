@@ -1,7 +1,16 @@
 import DS from 'ember-data';
+import registeredEvents from 'aboutblank/models/registered-events';
 
 export default DS.Model.extend({
-  metadata: Ember.Object.create({icon: '', prefix: ''}),
+  metadata: function() {
+    var typeKey = this.constructor.typeKey;
+    var metadata = registeredEvents.findBy('name', typeKey);
+    if (metadata !== undefined) {
+      return metadata;
+    } else {
+      throw new Error("Cannot find typeKey in registeredEvents. Is " + typeKey + " a `name` registered in app/models/registered-events.js?");
+    }
+  }.property(),
   title: DS.attr('string'),
   uuid: DS.attr('string'),
   happenedAt: DS.attr('date'),

@@ -26,8 +26,8 @@ export default Ember.Controller.extend({
     var rawfeed = this.get('feed');
     var feed = Ember.A();
 
-    this.get('activeEventTypes').forEach(function(item) {
-      rawfeed.get(item.get('name')).forEach(function(eventItem) {
+    this.get('activeEventTypes').forEach(function(type) {
+      rawfeed.get(type.get('pluralName')).forEach(function(eventItem) {
         feed.pushObject(eventItem);
       });
     });
