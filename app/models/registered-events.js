@@ -21,5 +21,12 @@ export default Ember.A([
       icon: 'icon-github3',
       prefix: 'Created a new project',
       label: 'Github Projects'
+    }),
+    Ember.Object.create({
+      name: 'githubStarEvent',
+      pluralName: 'githubStarEvents',
+      icon: 'icon-star-full',
+      prefix: 'Starred a repository',
+      label: 'Github Stars'
     })
   ]);

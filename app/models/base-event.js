@@ -16,6 +16,8 @@ export default DS.Model.extend({
   happenedAt: DS.attr('date'),
   imageUrl: DS.attr('string'),
   url: DS.attr('string'),
+  created_at: DS.attr('date'),
+  updated_at: DS.attr('date'),
   icon: function() {
     return this.get('metadata').get('icon');
   }.property(),
