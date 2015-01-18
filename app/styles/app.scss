@@ -68,9 +68,15 @@ header {
     margin-top: 0px;
     font-size: 2em;
 
-      & a:hover {
-        color: $link-color;
-      }
+    a {
+      -webkit-transition: color .15s;
+      -moz-transition: color .15s;
+      -webkit-transition: color .15s;
+    }
+    
+    a:hover {
+        color: $font-color;
+    }
   }
 
 }
@@ -89,6 +95,9 @@ nav.main {
 
   a {
     font-size: 1.2em;
+    -webkit-transition: color .15s;
+    -moz-transition: color .15s;
+    -webkit-transition: color .15s;
   }
 
   a.active {
@@ -116,6 +125,18 @@ nav.main {
   font-family: 'raleway';
   font-size: .9em;
   color: $font-color-sub;
+
+}
+
+.activateable {
+
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -webkit-transition: color .25s;
+
+  &:hover {
+    color: $font-color;
+  }
 }
 
 .pull-right {

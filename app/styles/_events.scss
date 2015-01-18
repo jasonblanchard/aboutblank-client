@@ -12,6 +12,10 @@
     border: 1px solid rgb(176, 176, 176);
   }
 
+  .event-content {
+    margin-top: 3px;
+  }
+
   &.loading {
     .event-content {
       float: left;
