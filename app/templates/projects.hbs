@@ -1,14 +1,26 @@
 {{#each}}
-  <article class='project'>
-    <h2>{{name}}</h2>
-    <p>{{description}}</p>
-    <footer>
-      <div class='sub-info'>
-        <span class='icon-link'></span> <a {{bind-attr href='url'}} target='_blank'>web</a> 
-        {{#if code}}
-        | <span class='icon-embed2'></span> <a {{bind-attr href='code'}} target='_blank'>code</a>
-        {{/if}}
+  <article class='project row'>
+    <div class='col-md-7'>
+      <div class="fake-browser-ui">
+        <div class="frame">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <img {{bind-attr src='image'}} width="100%" {{bind-attr alt="name"}}>
       </div>
-    </footer>
+    </div>
+    <div class='col-md-5'>
+      <h2>{{name}}</h2>
+      <p>{{description}}</p>
+      <footer>
+        <div class='sub-info'>
+          <span class='icon-link'></span> <a {{bind-attr href='url'}} target='_blank'>web</a> 
+          {{#if code}}
+          | <span class='icon-embed2'></span> <a {{bind-attr href='code'}} target='_blank'>code</a>
+          {{/if}}
+        </div>
+      </footer>
+    </div>
   </article>
 {{/each}}
