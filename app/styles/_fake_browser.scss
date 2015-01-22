@@ -28,3 +28,16 @@
   margin: -1px 0 0 4px;
 }
 
+@media (max-width: 991px) {
+  .fake-browser-ui {
+    padding: 15px 0 0;
+  }
+
+  .fake-browser-ui span {
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    margin: -2px 0 0 4px;
+}
+    
+}
