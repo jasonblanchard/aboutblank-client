@@ -18,6 +18,14 @@ export default Ember.Route.extend({
         url: "http://booknodes.herokuapp.com/",
         code: "https://github.com/jasonblanchard/booknodes",
         image: 'booknodes.png'
+      },
+      {
+        id: 4,
+        name: "Imperfect Tense",
+        description: "\"Imperfect Tense\" is a short story written by <a href='http://www.thomdunn.info/' target='_blank'>Thom Dunn</a>. We collaborated on a user interface that both simplifies and exaggerates the complex structure of the story using multiple strands of concurrent footnotes.",
+        url: "http://jasonblanchard.github.io/imperfect-tense/",
+        code: "https://github.com/jasonblanchard/imperfect-tense",
+        image: 'imperfect_tense.png'
       }
     ];
   }
