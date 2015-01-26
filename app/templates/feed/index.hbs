@@ -22,6 +22,9 @@
             {{time-ago-in-words this.happenedAt}}
           </span>
         </div>
+        {{#if imageUrl}}
+          <img class='event-image' {{bind-attr src="imageUrl"}} />
+        {{/if}}
       </div>
     </div>
   </div>
